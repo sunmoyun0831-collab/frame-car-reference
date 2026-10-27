@@ -1,0 +1,69 @@
+{
+  "manifest_version": 3,
+  "name": "FRAME 汽车设计参考助手",
+  "version": "0.5.0",
+  "description": "非官方汽车设计参考工具：在 autohome.com.cn 浏览时进行车型联想、图库多选，并按车型与专题自动归档参考图。",
+  "minimum_chrome_version": "111",
+  "permissions": [
+    "storage",
+    "downloads"
+  ],
+  "host_permissions": [
+    "*://*.autohome.com.cn/*",
+    "*://*.autoimg.cn/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "展开 / 收起 FRAME",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.autohome.com.cn/*"
+      ],
+      "exclude_matches": [
+        "*://passport.autohome.com.cn/*",
+        "*://account.autohome.com.cn/*",
+        "*://pay.autohome.com.cn/*"
+      ],
+      "js": [
+        "navigation.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "*://*.autohome.com.cn/*"
+      ],
+      "exclude_matches": [
+        "*://passport.autohome.com.cn/*",
+        "*://account.autohome.com.cn/*",
+        "*://pay.autohome.com.cn/*"
+      ],
+      "js": [
+        "shared.js",
+        "icons.js",
+        "styles.js",
+        "panel.js",
+        "detector.js",
+        "gallery.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "world": "ISOLATED"
+    }
+  ]
+}

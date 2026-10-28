@@ -19,10 +19,14 @@ Unofficial Chrome extension for organizing car design references while browsing 
 
 目前没有上架 Chrome 应用商店，需要手动加载：
 
-1. 点击本页绿色的 **Code** 按钮 → **Download ZIP**，下载后解压到一个固定位置（以后不要移动或删除这个文件夹）。
-2. 在 Chrome 地址栏打开 `chrome://extensions`，打开右上角的「开发者模式」。
-3. 点击「加载已解压的扩展程序」，选择解压后**直接包含 `manifest.json`** 的那个文件夹。
-4. 打开或刷新汽车之家页面，即可看到 FRAME 浮窗。
+1. 到本仓库的 [Releases](https://github.com/sunmoyun0831-collab/frame-car-reference/releases/latest) 页面，下载最新的 `FRAME-x.x.x.zip`。
+2. 解压 zip，会得到一个 `FRAME-x.x.x` 文件夹。**打开它**，里面才是真正的扩展文件夹 `FRAME`（全大写）。
+3. 先把 `FRAME` 文件夹放到一个固定位置，以后不要移动或删除它，否则扩展会失效。
+4. 在 Chrome 地址栏打开 `chrome://extensions`，打开右上角的「开发者模式」。
+5. 把 `FRAME` 文件夹**直接拖进**这个扩展管理页面，即可完成安装。
+6. 打开或刷新汽车之家页面，即可看到 FRAME 浮窗。
+
+> 注意：要拖的是里层的 `FRAME` 文件夹，不是外层的 `FRAME-x.x.x`。拖错一层会提示找不到 manifest 文件。
 
 需要 Chrome 111 或更高版本，支持 Windows 和 macOS 桌面版。
 
